@@ -1,0 +1,241 @@
+.login {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 80vh;
+  color: white;
+}
+
+.login-container {
+  background: rgba(11, 15, 26, 0.9);
+  backdrop-filter: blur(10px);
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.25);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-container h1 {
+  text-align: center;
+  margin-bottom: 2rem;
+  font-size: 2rem;
+  text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+.login-form {
+  display: grid;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: grid;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-weight: 500;
+  text-align: left;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 0.75rem;
+  background: rgba(255, 255, 255, 0.12);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: 6px;
+  color: white;
+  font-size: 1rem;
+}
+
+.form-group input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #667eea;
+  box-shadow: 0 0 0 2px rgba(102, 126, 234, 0.2);
+}
+
+.submit-btn {
+  background: linear-gradient(45deg, #4e7dff, #7a5cff);
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 8px;
+  font-size: 1.1rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-top: 1rem;
+}
+
+.submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.submit-btn:disabled {
+  background: linear-gradient(45deg, #999, #666);
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.submit-btn:disabled:hover {
+  transform: none;
+  box-shadow: none;
+}
+
+.error-message {
+  background: rgba(220, 53, 69, 0.25);
+  border: 1px solid rgba(220, 53, 69, 0.6);
+  color: #f8d7da;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.success-message {
+  background: rgba(40, 167, 69, 0.25);
+  border: 1px solid rgba(40, 167, 69, 0.6);
+  color: #d4edda;
+  padding: 0.75rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+.toggle-form {
+  margin-top: 1.5rem;
+  text-align: center;
+}
+
+.toggle-form p {
+  margin-bottom: 0.5rem;
+  opacity: 0.9;
+}
+
+.toggle-btn {
+  background: none;
+  border: none;
+  color: #667eea;
+  text-decoration: underline;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+.toggle-btn:hover {
+  color: #764ba2;
+}
+
+@media (max-width: 768px) {
+  .login {
+    min-height: 70vh;
+    padding: 1rem;
+  }
+
+  .login-container {
+    margin: 1rem;
+    padding: 1.5rem;
+    max-width: 100%;
+  }
+  
+  .login-container h1 {
+    font-size: 1.8rem;
+  }
+
+  .form-group {
+    gap: 0.4rem;
+  }
+
+  .form-group label {
+    font-size: 0.9rem;
+  }
+
+  .form-group input {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .submit-btn {
+    padding: 0.8rem;
+    font-size: 1rem;
+  }
+
+  .toggle-btn {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .login {
+    padding: 0.5rem;
+  }
+
+  .login-container {
+    margin: 0.5rem;
+    padding: 1rem;
+  }
+
+  .login-container h1 {
+    font-size: 1.6rem;
+  }
+
+  .form-group {
+    gap: 0.3rem;
+  }
+
+  .form-group label {
+    font-size: 0.8rem;
+  }
+
+  .form-group input {
+    padding: 0.5rem;
+    font-size: 0.8rem;
+  }
+
+  .submit-btn {
+    padding: 0.6rem;
+    font-size: 0.9rem;
+  }
+
+  .toggle-btn {
+    font-size: 0.8rem;
+  }
+}
+
+/* Referral Code Styling */
+.referral-code-prefilled {
+  border-color: #4ecdc4 !important;
+  background-color: rgba(78, 205, 196, 0.1) !important;
+  box-shadow: 0 0 0 2px rgba(78, 205, 196, 0.2) !important;
+}
+
+.referral-code-indicator {
+  margin-top: 8px;
+  padding: 8px 12px;
+  background: rgba(78, 205, 196, 0.1);
+  border: 1px solid #4ecdc4;
+  border-radius: 6px;
+  color: #4ecdc4;
+  font-size: 0.85rem;
+  font-weight: 500;
+  text-align: center;
+  animation: fadeIn 0.3s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-5px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+} 
