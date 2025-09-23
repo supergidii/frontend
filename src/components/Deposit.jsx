@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import './Deposit.css';
 
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://netgift1aviator.pythonanywhere.com/api';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://netgift1aviator.pythonanywhere.com/';
 
 function Deposit() {
   const [amount, setAmount] = useState('');
