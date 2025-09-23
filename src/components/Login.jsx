@@ -2,7 +2,7 @@ import React, { useState, useEffect } from 'react';
 import './Login.css';
 
 // Base URL for API calls
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://netgift1aviator.pythonanywhere.com/api';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://netgift1aviator.pythonanywhere.com';
 
 function Login() {
   const [isLogin, setIsLogin] = useState(true);
