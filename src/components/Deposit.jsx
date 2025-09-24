@@ -21,14 +21,21 @@ function Deposit() {
       return;
     }
     try {
-      await fetch(`${API_BASE_URL}/api/mpesa/stkpush/?amount=${encodeURIComponent(amount)}`, {
+      const resp = await fetch(`${API_BASE_URL}/api/mpesa/stkpush/?amount=${encodeURIComponent(amount)}`, {
         method: 'GET',
         headers: {
           'Authorization': `Bearer ${token}`
         }
       });
+      const data = await resp.json().catch(() => ({}));
+      if (!resp.ok) {
+        setError((data && (data.error || data.detail)) || 'Failed to initiate STK Push');
+        setSuccess('');
+        return;
+      }
       setError('');
-      setSuccess('STK Push sent. Enter your M-Pesa PIN to complete. Your balance will update automatically after confirmation.');
+      const msisdn = data && data.request_msisdn ? ` (to ${data.request_msisdn})` : '';
+      setSuccess(`STK Push sent${msisdn}. Enter your M-Pesa PIN to complete. Your balance will update automatically after confirmation.`);
     } catch (e) {
       setError('Failed to initiate STK Push');
     }
