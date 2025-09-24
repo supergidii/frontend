@@ -4,7 +4,7 @@ import axios from 'axios';
 import './Aviator.css';
 
 // Set the base URL for API calls (env override, default to local backend)
-const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://netgift1aviator.pythonanywhere.com/';
+const API_BASE_URL = process.env.REACT_APP_API_BASE_URL || 'https://netgift1aviator.pythonanywhere.com';
 
 // Always attach Authorization header when token exists (backend ignores it for public endpoints)
 axios.interceptors.request.use((config) => {
