@@ -61,9 +61,15 @@ function Deposit() {
         },
         body: JSON.stringify({ amount, transaction_code: txnCode })
       });
-      if (!resp.ok) throw new Error('Manual submission failed');
+      const data = await resp.json().catch(() => ({}));
+      if (!resp.ok) {
+        setSuccess('');
+        setError((data && (data.error || data.detail)) || 'Failed to submit transaction');
+        return;
+      }
       setError('');
-      setSuccess('Transaction submitted. Your balance will update once verified.');
+      const msg = (data && data.message) || 'Transaction submitted. Your balance will update once verified.';
+      setSuccess(msg);
     } catch (e) {
       setError('Failed to submit transaction');
     }
